@@ -25,3 +25,21 @@ latest: Pulling from library/ubuntu
 Digest: sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
 Status: Downloaded newer image for ubuntu:latest
 root@95e7f20efcfc:/# 
+
+# output
+
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                       PORTS                                   NAMES
+95e7f20efcfc   ubuntu    "bash"                   4 minutes ago   Exited (127) 5 seconds ago                                           blissful_pascal
+71b93b133cd3   nginx     "/docker-entrypoint.…"   7 minutes ago   Created                                                              boring_jones
+1339ee44870f   nginx     "/docker-entrypoint.…"   7 minutes ago   Up 7 minutes                 0.0.0.0:8080->80/tcp, :::8080->80/tcp   elegant_shamir
+
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker rm 95e7f20efcfc
+95e7f20efcfc
+
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+71b93b133cd3   nginx     "/docker-entrypoint.…"   8 minutes ago   Created                                                boring_jones
+1339ee44870f   nginx     "/docker-entrypoint.…"   9 minutes ago   Up 9 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   elegant_shamir
+
+# output: eliminar 
