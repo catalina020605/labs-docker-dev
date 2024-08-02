@@ -16,3 +16,12 @@ docker.io/library/nginx:latest
 # output
 @catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 8080:80 nginx
 71b93b133cd3fac0e7de831ecf06e44ecf586aff2f1e0c9029839021c73d11d1
+
+# output
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+9c704ecd0c69: Pull complete 
+Digest: sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+Status: Downloaded newer image for ubuntu:latest
+root@95e7f20efcfc:/# 
