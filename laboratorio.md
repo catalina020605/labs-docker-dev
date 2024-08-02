@@ -13,3 +13,6 @@ Digest: sha256:6af79ae5de407283dcea8b00d5c37ace95441fd58a8b1d2aa1ed93f5511bb18c
 Status: Downloaded newer image for nginx:latest
 docker.io/library/nginx:latest
 
+# output
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 8080:80 nginx
+71b93b133cd3fac0e7de831ecf06e44ecf586aff2f1e0c9029839021c73d11d1
