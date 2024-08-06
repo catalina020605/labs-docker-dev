@@ -63,3 +63,6 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
  => => naming to docker.io/library/ubuntu-updated:latest                                                                               0.0s
 
 
+# CMD
+
+CMD ["nginx", "-g", "daemon off;"]
