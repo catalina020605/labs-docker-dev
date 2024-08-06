@@ -42,4 +42,24 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
 71b93b133cd3   nginx     "/docker-entrypoint.…"   8 minutes ago   Created                                                boring_jones
 1339ee44870f   nginx     "/docker-entrypoint.…"   9 minutes ago   Up 9 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   elegant_shamir
 
-# output: eliminar 
+# output docker build
+
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker build -t ubuntu-updated:latest .
+[+] Building 24.2s (9/9) FINISHED                                                                                            docker:default
+ => [internal] load build definition from dockerfile                                                                                   0.0s
+ => => transferring dockerfile: 571B                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                      0.1s
+ => => transferring context: 2B                                                                                                        0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest                                                                                         0.1s
+ => [internal] load build context                                                                                                      0.3s
+ => => transferring context: 44.23kB                                                                                                   0.0s
+ => [2/4] RUN apt-get update && apt-get install -y     curl     wget     vim     && apt-get clean                                     21.7s
+ => [3/4] WORKDIR /app                                                                                                                 0.2s
+ => [4/4] COPY . /app                                                                                                                  0.2s
+ => exporting to image                                                                                                                 1.4s
+ => => exporting layers                                                                                                                1.3s
+ => => writing image sha256:5e8234ed34cdfdf5b4e20905e956317ddb161e5931d58f996fb0d15f5aef9e87                                           0.0s
+ => => naming to docker.io/library/ubuntu-updated:latest                                                                               0.0s
+
+
