@@ -141,3 +141,24 @@ CMD ["nginx", "-g", "daemon off;"]
  => => exporting layers                                                                                                                0.9s
  => => writing image sha256:9629af8b01c832577653d775cdec67cbe112f9380016e650afd422a46d593094                                           0.0s
  => => naming to docker.io/library/my-nginx:latest 
+
+ # workdir
+
+ @catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 2.1s (10/10) FINISHED                                                                                           docker:default
+ => [internal] load build definition from dockerfile                                                                                   0.0s
+ => => transferring dockerfile: 225B                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                        0.0s
+ => [1/5] FROM docker.io/library/ubuntu:latest                                                                                         0.0s
+ => [internal] load build context                                                                                                      0.1s
+ => => transferring context: 65B                                                                                                       0.0s
+ => CACHED [2/5] RUN apt-get update && apt-get install -y nginx                                                                        0.0s
+ => CACHED [3/5] COPY index.html /usr/share/nginx/html/                                                                                0.0s
+ => [4/5] WORKDIR /app                                                                                                                 0.2s
+ => [5/5] COPY myfile.txt .                                                                                                            0.2s
+ => exporting to image                                                                                                                 1.2s
+ => => exporting layers                                                                                                                1.1s
+ => => writing image sha256:c986dcc3ab1cddb7368f3d5281621b7ad1a067be20e4399c719c4d37c5f9b494                                           0.0s
+ => => naming to docker.io/library/my-nginx:latest 
