@@ -91,3 +91,34 @@ CMD ["nginx", "-g", "daemon off;"]
 
 @catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest
 04e1a8a2b24130249f64b3723ad0b3e459f5fc528ba4c4aa2ce9e677c59264b8
+
+# Reconstruir
+
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 12.1s (6/6) FINISHED                                                                                            docker:default
+ => [internal] load build definition from dockerfile                                                                                   0.0s
+ => => transferring dockerfile: 150B                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                        0.0s
+ => CACHED [1/2] FROM docker.io/library/ubuntu:latest                                                                                  0.0s
+ => [2/2] RUN apt-get update && apt-get install -y nginx                                                                              10.8s
+ => exporting to image                                                                                                                 0.8s
+ => => exporting layers                                                                                                                0.7s
+ => => writing image sha256:3f7b9d60714ae5fa70ce1a962578edeacd1d322cfb6d936ca84f9960972520ad                                           0.0s
+ => => naming to docker.io/library/my-nginx:latest                                                                                     0.0s
+
+
+@catalina020605 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 0.4s (6/6) FINISHED                                                                                             docker:default
+ => [internal] load build definition from dockerfile                                                                                   0.0s
+ => => transferring dockerfile: 150B                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                      0.1s
+ => => transferring context: 2B                                                                                                        0.0s
+ => [1/2] FROM docker.io/library/ubuntu:latest                                                                                         0.0s
+ => CACHED [2/2] RUN apt-get update && apt-get install -y nginx                                                                        0.0s
+ => exporting to image                                                                                                                 0.0s
+ => => exporting layers                                                                                                                0.0s
+ => => writing image sha256:3f7b9d60714ae5fa70ce1a962578edeacd1d322cfb6d936ca84f9960972520ad                                           0.0s
+ => => naming to docker.io/library/my-nginx:latest 
